@@ -12,24 +12,26 @@ root.resizable(False,False)
 window_icon = PhotoImage(file = "window_logo.png")
 root.iconphoto(True,window_icon)
 
-covid = Covid()
-covid.get_data()
+
 today = date.today()
 #print("Today's date:", today)
-date_strings = ""
+date_strings = "Date"
 
 def getCovidData():
     country_name =  textfield.get()
     
+    
     try:
-         covid_data = covid.get_status_by_country_name(country_name)
-         country = covid_data["country"]
-         comfirmed = covid_data['confirmed']
-         active = covid_data['active']
-         deaths = covid_data['deaths']
-         recovered = covid_data['recovered']
+        covid = Covid()
+        covid.get_data()
+        covid_data = covid.get_status_by_country_name(country_name)
+        country = covid_data["country"]
+        comfirmed = covid_data['confirmed']
+        active = covid_data['active']
+        deaths = covid_data['deaths']
+        recovered = covid_data['recovered']
          
-         """
+        """
          t.config(text=(temp,"º"))
          c.config(text = (Condition,"|","FEELS", "LIKE", temp, "º"))
          w.config(text = wind)
@@ -41,15 +43,13 @@ def getCovidData():
 
 
 
-         t.config(text=(country_name))
+        t.config(text=(country_name))
          #datetime
-         c.config(text = (today))
-         w.config(text = comfirmed)
-         h.config(text = active)
-         d.config(text = deaths) 
-         v.config(text = recovered)
-         
-         print(active)
+        c.config(text = (today))
+        w.config(text = comfirmed)
+        h.config(text = active)
+        d.config(text = deaths) 
+        v.config(text = recovered)
     except Exception as e:
         messagebox.showerror("Weather App","Invalid Entry" +"\n Or" + "\nNo Internet Connection Available")
 
@@ -67,7 +67,7 @@ myimage_icon = Button(image = Search_icon,borderwidth = 0, cursor = "hand2", bg 
 myimage_icon.place(x = 400, y = 34)
 
 #logo
-Logo_image = PhotoImage(file = "logo.png")
+Logo_image = PhotoImage(file = "covid.png")
 logo = Label(image = Logo_image)
 logo.place(x = 150, y = 100) 
 
@@ -95,10 +95,10 @@ label4 = Label(root,text="RECOVERED", font=("Helvetica",15,'bold'),fg = "white",
 label4.place(x = 650, y =400)
 
 #countryname label
-t = Label(font = ("arial",40,"bold"),fg = "#ee666d")
+t = Label(font = ("arial",40,"bold"),fg = "#000814")
 t.place(x = 400,y = 150)
 #date label to be displayed later
-c = Label(font=("arial",15,"bold"),fg="#FD3E81")
+c = Label(font=("arial",15,"bold"),fg="#000814")
 c.place(x = 400,y =250)
 
 w = Label(text = "...",font=("arial",20,"bold"),bg = "#1ab5ef")
