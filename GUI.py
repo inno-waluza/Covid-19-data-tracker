@@ -12,9 +12,8 @@ root.resizable(False,False)
 window_icon = PhotoImage(file = "window_logo.png")
 root.iconphoto(True,window_icon)
 
-
+#get todays date
 today = date.today()
-#print("Today's date:", today)
 date_strings = "Date"
 
 def getCovidData():
@@ -30,22 +29,22 @@ def getCovidData():
         active = covid_data['active']
         deaths = covid_data['deaths']
         recovered = covid_data['recovered']
-         
+        
+         #reference from previous code
         """
          t.config(text=(temp,"º"))
-         c.config(text = (Condition,"|","FEELS", "LIKE", temp, "º"))
+         c.config(text = ())
          w.config(text = wind)
          h.config(text = humidity)
          d.config(text = weather) 
          #p.config(text = preassure)
          v.config(text = visibility)
          """
-
-
-
+        #Display country name and date
         t.config(text=(country_name))
-         #datetime
-        c.config(text = (today))
+        c.config(text = ("As of Today",today))
+
+        #display covid 19 data
         w.config(text = comfirmed)
         h.config(text = active)
         d.config(text = deaths) 
