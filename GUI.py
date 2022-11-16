@@ -4,7 +4,6 @@ from tkinter import messagebox
 from covid import Covid
 from datetime import date
 
-
 root = Tk()
 root.title("COVID-19 DATA TRACKER")
 root.geometry("900x500+300+200")
@@ -19,7 +18,6 @@ day_String = "As of Today"
 
 def getCovidData():
     country_name =  textfield.get()
-    
     
     try:
         covid = Covid()
@@ -52,7 +50,6 @@ def getCovidData():
         v.config(text = recovered)
     except Exception as e:
         messagebox.showerror("Weather App","Invalid Entry" +"\n Or" + "\nNo Internet Connection Available")
-
 
 Search_image = PhotoImage(file="search.png")
 myimage = Label(image = Search_image)
@@ -109,7 +106,5 @@ d = Label(text = "...",font=("arial",20,"bold"),bg = "#1ab5ef")
 d.place(x =450, y = 430)
 v = Label(text = "...",font=("arial",20,"bold"),bg = "#1ab5ef")
 v.place(x =670, y = 430)
-
-
 
 root.mainloop()
