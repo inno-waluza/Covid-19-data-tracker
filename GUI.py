@@ -15,6 +15,7 @@ root.iconphoto(True,window_icon)
 #get todays date
 today = date.today()
 date_strings = "Date"
+day_String = "As of Today"
 
 def getCovidData():
     country_name =  textfield.get()
@@ -42,7 +43,7 @@ def getCovidData():
          """
         #Display country name and date
         t.config(text=(country_name))
-        c.config(text = ("As of Today",today))
+        c.config(text = (today))
 
         #display covid 19 data
         w.config(text = comfirmed)
@@ -97,7 +98,7 @@ label4.place(x = 650, y =400)
 t = Label(font = ("arial",40,"bold"),fg = "#000814")
 t.place(x = 400,y = 150)
 #date label to be displayed later
-c = Label(font=("arial",15,"bold"),fg="#000814")
+c = Label(text = "Date",font=("arial",15,"bold"),fg="#000814")
 c.place(x = 400,y =250)
 
 w = Label(text = "...",font=("arial",20,"bold"),bg = "#1ab5ef")
