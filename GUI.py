@@ -20,6 +20,7 @@ def getCovidData():
     country_name =  textfield.get()
     
     try:
+        #get Data
         covid = Covid()
         covid.get_data()
         covid_data = covid.get_status_by_country_name(country_name)
@@ -29,16 +30,6 @@ def getCovidData():
         deaths = covid_data['deaths']
         recovered = covid_data['recovered']
         
-         #reference from previous code
-        """
-         t.config(text=(temp,"º"))
-         c.config(text = ())
-         w.config(text = wind)
-         h.config(text = humidity)
-         d.config(text = weather) 
-         #p.config(text = preassure)
-         v.config(text = visibility)
-         """
         #Display country name and date
         t.config(text=(country_name))
         c.config(text = (today))
