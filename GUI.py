@@ -34,13 +34,14 @@ def getCovidData():
         t.config(text=(country_name))
         c.config(text = (today))
 
-        #display covid 19 data
+        #display covid 19 data labels texts
         w.config(text = comfirmed)
         h.config(text = active)
         d.config(text = deaths) 
         v.config(text = recovered)
+        #error message
     except Exception as e:
-        messagebox.showerror("Weather App","Invalid Entry" +"\n Or" + "\nNo Internet Connection Available")
+        messagebox.showerror("COVID-19 DATA TRACKER","Invalid Entry" +"\n Or" + "\nNo Internet Connection Available")
 
 Search_image = PhotoImage(file="search.png")
 myimage = Label(image = Search_image)
@@ -85,6 +86,7 @@ label4.place(x = 650, y =400)
 #countryname label
 t = Label(font = ("arial",40,"bold"),fg = "#000814")
 t.place(x = 400,y = 150)
+
 #date label to be displayed later
 c = Label(text = "Date",font=("arial",15,"bold"),fg="#000814")
 c.place(x = 400,y =250)
